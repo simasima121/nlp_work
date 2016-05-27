@@ -45,3 +45,11 @@ for span in parsedData.sents:
 
 for sentence in sents:
     print(sentence)
+
+# Let's look at the part of speech tags of the first sentence
+for span in parsedData.sents:
+    sent = [parsedData[i] for i in range(span.start, span.end)]
+    break
+
+for token in sent:
+    print(token.orth_, token.pos_)
