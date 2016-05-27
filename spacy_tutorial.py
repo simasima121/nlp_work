@@ -53,3 +53,10 @@ for span in parsedData.sents:
 
 for token in sent:
     print(token.orth_, token.pos_)
+
+# Let's look at the dependencies of this example:
+example = (u"The boy with the spotted dog quickly ran after the firetruck.")
+parsedEx = parser(example)
+# shown as: original token, dependency tag, head word, left dependents, right dependents
+for token in parsedEx:
+    print(token.orth_, token.dep_, token.head.orth_, [t.orth_ for t in token.lefts], [t.orth_ for t in token.rights])
