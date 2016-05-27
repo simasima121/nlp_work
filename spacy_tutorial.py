@@ -31,3 +31,17 @@ for i, token in enumerate(parsedData):
     print("----------------------------------------")
     if i > 1:
         break
+
+# Let's look at the sentences
+sents = []
+# the "sents" property returns spans
+# spans have indices into the original string
+# where each index value represents a token
+for span in parsedData.sents:
+    # go from the start to the end of each span, returning each token in the sentence
+    # combine each token using join()
+    sent = ''.join(parsedData[i].string for i in range(span.start, span.end)).strip()
+    sents.append(sent)
+
+for sentence in sents:
+    print(sentence)
